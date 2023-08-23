@@ -1,16 +1,13 @@
 import express, { Express } from 'express';
-//import { logParam } from './logMiddleweare';
-import bodyParser from 'body-parser'
-//import usuariosRoutes from './modules/usuarios/usuarios.routes';
+import noticiasRoutes from './modules/noticias/noticias.routes';
+import bodyParser from 'body-parser';
 
 const app: Express = express();
 
 app.use(bodyParser.json());
 
-// /usuarios/1
-// /usuarios/2
-//app.use('/usuarios/', usuariosRoutes);
+app.use('/noticias', noticiasRoutes);
 
-app.listen(1000, () => {
-	console.log(`⚡️ SERVER API IS RUNNING http://localhost:1000`);
-}); 
+app.listen(2000, () => {
+	console.log('Servidor funcionando OK en el Puerto 2000!!!');
+});
